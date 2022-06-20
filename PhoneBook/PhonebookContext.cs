@@ -7,8 +7,6 @@ namespace PhoneBook
     public class PhonebookContext: DbContext
     {
         public DbSet<Contact> Contacts { get; set; }  
-        public DbSet<User> Users { get; set; }
-        public DbSet<Favourites> Favorites { get; set; }
 
 
         public PhonebookContext()
@@ -24,8 +22,6 @@ namespace PhoneBook
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ContactConfiguration());
-            modelBuilder.ApplyConfiguration(new UserConfiguration());
-            modelBuilder.ApplyConfiguration(new FavouritesConfiguration());
         }
     }
 

@@ -1,9 +1,9 @@
 ﻿using PhoneBook.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace PhoneBook.Entities
+namespace PhoneBook.Models
 {
-    public class Contact
+    public class ContactModel
     {
         public Guid ID { get; set; }
         public string Name { get; set; }

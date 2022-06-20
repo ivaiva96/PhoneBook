@@ -1,13 +1,20 @@
 using Microsoft.EntityFrameworkCore;
 using PhoneBook;
-
+using PhoneBook.Interfaces;
+using PhoneBook.Mapper;
+using PhoneBook.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<IMapper<PhoneBook.Entities.Contact, PhoneBook.Models.ContactModel>, ContactMapper>();
 builder.Services.AddDbContext<PhonebookContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Phonebook")));
 var app = builder.Build();
+
 
 
 using (var scope = app.Services.CreateScope())

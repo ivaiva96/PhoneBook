@@ -8,8 +8,7 @@ namespace PhoneBook.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Contact> builder)
         {
-            builder.HasKey(x => x.ID);
-            builder.HasOne(x => x.User);
+            builder.HasKey(x => x.ID);          
         }
     }
 }
